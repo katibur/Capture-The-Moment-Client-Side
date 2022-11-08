@@ -7,7 +7,9 @@ import Register from "../../Pages/Register/Register";
 import Services from "../../Pages/Services/Services";
 import PrivateRoute from "../PrivateRouter/PrivateRoute";
 
-
+import errorPhoto from '../../Assets/errorPhoto.png'
+import ServiceDetails from "../../Pages/Services/ServiceDetails";
+import AddServices from "../../Pages/AddServices/AddServices";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +26,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <PrivateRoute><Services></Services></PrivateRoute>
+                element: <Services></Services>
+            },
+            {
+                path: '/serviceDetails/:id',
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
+            },
+            {
+                path: '/addServices',
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             },
             {
                 path: '/login',
@@ -33,8 +43,13 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
-            }
+            },
+
         ]
+    },
+    {
+        path: '*',
+        element: <div className="max-w-screen-2xl mx-auto my-10"><img className="mx-auto" src={errorPhoto} alt="" /></div>
     }
 ])
 
