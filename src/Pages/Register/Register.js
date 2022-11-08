@@ -81,13 +81,13 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <input type='submit' className="btn btn-primary" value='Sign Up'></input>
                         </div>
-                        <div className="form-control mt-4">
-                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><span className='mr-1 text-lg'><FcGoogle></FcGoogle></span>Sign in With Google</button>
-                        </div>
-                        <div className="form-control mt-4">
-                            <p>Already Have An Account?<Link to='/login'> <button className='btn btn-outline'>Login</button></Link></p>
-                        </div>
                     </form>
+                    <div className="form-control mt-6 w-5/6 mx-auto">
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><span className='mr-1 text-lg'><FcGoogle></FcGoogle></span>Sign in With Google</button>
+                    </div>
+                    <div className="form-control my-6 w-5/6 mx-auto">
+                        <p>Already Have An Account?<Link to='/login'> <button className='btn btn-outline'>Login</button></Link></p>
+                    </div>
                 </div>
             </div>
         </div >

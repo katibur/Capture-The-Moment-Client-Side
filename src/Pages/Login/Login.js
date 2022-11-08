@@ -75,13 +75,13 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type='submit' value='Login'></input>
                         </div>
-                        <div className="form-control mt-6">
-                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><span className='mr-1 text-lg'><FcGoogle></FcGoogle></span>Sign in With Google</button>
-                        </div>
-                        <div className="form-control mt-6">
-                            <p>New Here? <Link to='/register'><button className='btn btn-outline'>Register</button></Link></p>
-                        </div>
                     </form>
+                    <div className="form-control mt-6 w-5/6 mx-auto">
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><span className='mr-1 text-lg'><FcGoogle></FcGoogle></span>Sign in With Google</button>
+                    </div>
+                    <div className="form-control my-6 w-5/6 mx-auto">
+                        <p>New Here? <Link to='/register'><button className='btn btn-outline'>Register</button></Link></p>
+                    </div>
                 </div>
             </div>
         </div >
