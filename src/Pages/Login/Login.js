@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import login from '../../Assets/login.jpg';
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     return (
@@ -11,7 +12,7 @@ const Login = () => {
                     <img className="max-w-sm rounded-lg shadow-2xl" src={login} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <h1 className="text-5xl font-bold text-center">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-center">Login</h1>
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -31,10 +32,16 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <div className="form-control mt-6">
+                            <button className="btn btn-outline btn-accent"><span className='mr-1 text-lg'><FcGoogle></FcGoogle></span>Sign in With Google</button>
+                        </div>
+                        <div className="form-control mt-6">
+                            <p>New Here? <Link to='/register'><button className='btn btn-outline'>Register</button></Link></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
