@@ -1,8 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import logo from '../../Assets/logo.jpg';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Header = () => {
+
+    const { user, Logout } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        Logout()
+            .then(res => {
+                <Navigate to='/login'></Navigate>
+            })
+            .catch(error => console.error('error: ', error))
+    }
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
@@ -31,7 +42,12 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">LogIn</Link>
+                {
+                    user?.accessToken ?
+                        <button className="btn" onClick={handleLogout}>LogOut</button>
+                        :
+                        <Link to='/login' className="btn">LogIn</Link>
+                }
             </div>
         </div>
     );
