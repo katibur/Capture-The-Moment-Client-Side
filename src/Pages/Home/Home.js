@@ -5,6 +5,7 @@ import ServiceCard from './ServiceCard/ServiceCard';
 
 import statLogo from '../../Assets/banner/tobi.jpeg';
 import useTtile from '../../Components/Hooks/Title';
+import About from './About/About';
 
 const Home = () => {
     useTtile('Home');
@@ -39,7 +40,9 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className='mx-auto text-center my-6'>
+            <About></About>
+
+            <div className='mx-auto text-center my-6 border-2'>
                 <div className="stats shadow">
                     <div className="stat">
                         <div className="stat-figure text-primary">

@@ -5,22 +5,27 @@ import 'react-photo-view/dist/react-photo-view.css';
 import Reviews from '../Reviews/Reviews';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import UserReview from '../Reviews/UserReview';
+import useTtile from '../../Components/Hooks/Title';
+import toast from 'react-hot-toast';
+
 
 
 const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
     const { _id, title, description, price, img, rating, facility } = useLoaderData();
-    const [reviews, setReviews] = useState([]);
 
+    useTtile(title);
+
+    const [reviews, setReviews] = useState([]);
     const [userRev, setUserRev] = useState([]);
+
     useEffect(() => {
         fetch(`http://localhost:5000/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setUserRev(data);
-                console.log(data);
             })
-    }, [_id])
+    }, [_id]);
 
     useEffect(() => {
         fetch('http://localhost:5000/reviews')
@@ -39,9 +44,11 @@ const ServiceDetails = () => {
 
         const comment = {
             service: _id,
+            name: title,
             useremail,
             userimg,
-            review
+            review,
+            time: new Date().toLocaleString()
         };
 
         fetch('http://localhost:5000/reviews', {
@@ -54,7 +61,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('Successfully Reviewed');
+                    toast.success('Successfully Reviewed.')
                     form.reset();
                 }
             })
@@ -99,16 +106,16 @@ const ServiceDetails = () => {
                 }
                 {
                     userRev.map(rev => <UserReview
-                        key={rev.service}
+                        key={rev._id}
                         rev={rev}
                     ></UserReview>)
                 }
                 <form className='my-6' onSubmit={handleReview}>
                     <input type="text" placeholder="Your Email" name='useremail' defaultValue={user?.email ? user.email : 'Unknown'} className="input input-bordered input-primary w-full max-w-xl input-lg text-center" />
 
-                    <input type="text" placeholder="Your Photo URL" name='userimg' className="input input-bordered input-primary w-full max-w-xl input-lg text-center" required />
+                    <input type="text" placeholder="Your Photo URL" name='userimg' className="input input-bordered input-primary w-full max-w-xl input-lg text-center" defaultValue={user?.photoURL ? user.photoURL : "https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png"} />
 
-                    <input type="text" placeholder="Give Review Here" name='review' className="input input-bordered input-lg w-full max-w-xl text-center" required />
+                    <input type="text" placeholder="Give Review Here" name='review' className="input input-bordered input-lg w-full max-w-xl text-center" />
                     <div>
                         <input type='submit' className="btn btn-outline btn-secondary mt-3" value='Post Review'></input>
                     </div>

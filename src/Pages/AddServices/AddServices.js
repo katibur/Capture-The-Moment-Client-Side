@@ -1,5 +1,6 @@
 import React from 'react';
 import useTtile from '../../Components/Hooks/Title';
+import toast from 'react-hot-toast';
 
 const AddServices = () => {
     useTtile('Add Service');
@@ -15,7 +16,8 @@ const AddServices = () => {
             title: name,
             price: price,
             img: imageURL,
-            description: description
+            description: description,
+            time: new Date().toLocaleString()
         }
 
         fetch('http://localhost:5000/services', {
@@ -28,7 +30,7 @@ const AddServices = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('Successfully added');
+                    toast.success('Successfully Added Service.')
                     form.reset();
                 }
             })
@@ -66,7 +68,7 @@ const AddServices = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary" type='submit' value='Add Service'></input>
+                    <input className="btn btn-primary" type='submit' value='Add Service' ></input>
                 </div>
             </form>
         </div>
