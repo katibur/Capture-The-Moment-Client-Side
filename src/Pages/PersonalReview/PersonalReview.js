@@ -36,6 +36,16 @@ const PersonalReview = () => {
     };
 
 
+
+
+
+
+
+
+
+
+
+
     return (
         <div>
             {
@@ -43,6 +53,7 @@ const PersonalReview = () => {
                     key={singleFeedback._id}
                     singleFeedback={singleFeedback}
                     handleDelete={handleDelete}
+                    handleEdit={handleEdit}
                 ></PersonalReviewDetails>)
             };
         </div>
