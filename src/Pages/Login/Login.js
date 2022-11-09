@@ -4,8 +4,10 @@ import login from '../../Assets/login.jpg';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { setAuthToken } from '../../Api/auth';
+import useTtile from '../../Components/Hooks/Title';
 
 const Login = () => {
+    useTtile('Login');
     const { LogIn, setLoading, googleSignIn } = useContext(AuthContext);
 
     const location = useLocation();

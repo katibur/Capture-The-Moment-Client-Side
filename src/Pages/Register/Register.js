@@ -4,8 +4,10 @@ import { FcGoogle } from "react-icons/fc";
 import register from '../../Assets/register.jpg';
 import { setAuthToken } from '../../Api/auth';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import useTtile from '../../Components/Hooks/Title';
 
 const Register = () => {
+    useTtile('Registration');
 
     const { createUser, setLoading, googleSignIn } = useContext(AuthContext);
 

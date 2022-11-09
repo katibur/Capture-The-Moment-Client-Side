@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const ServiceCard = ({ service }) => {
 
@@ -8,7 +10,13 @@ const ServiceCard = ({ service }) => {
 
     return (
         <div className="card card-compact w-96 bg-base-100 shadow-xl my-6">
-            <figure><img src={img} alt="Shoes" /></figure>
+
+            <PhotoProvider>
+                <PhotoView src={img} >
+                    <img src={img} alt="" />
+                </PhotoView>
+            </PhotoProvider>
+
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
 
@@ -22,7 +30,7 @@ const ServiceCard = ({ service }) => {
 
                 <div className="card-actions justify-between">
                     <p className='font-semibold text-2xl text-orange-600'>Price: {price}/BDT</p>
-                    <Link to={`/serviceDetails/${_id}`}>
+                    <Link to={`/services/${_id}`}>
                         <button className="btn btn-circle btn-outline border-none text-orange-600">
                             <FaArrowRight></FaArrowRight>
                         </button>

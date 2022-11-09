@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import useTtile from '../../Components/Hooks/Title';
 import ServiceCard from '../Home/ServiceCard/ServiceCard';
 
 const Services = () => {
+    useTtile('Services');
 
     const [services, setServices] = useState([]);
 
@@ -20,13 +21,6 @@ const Services = () => {
                         service={service}
                     ></ServiceCard>)
                 }
-            </div>
-            <div className='mx-auto text-center my-6'>
-                <Link to={`/addServices`}>
-                    <button className="btn btn-outline text-orange-600">
-                        Add Service
-                    </button>
-                </Link>
             </div>
         </div>
     );

@@ -45,7 +45,13 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user?.accessToken ?
-                        <button className="btn" onClick={handleLogout}>LogOut</button>
+                        <div>
+                            <ul className="menu menu-horizontal p-0">
+                                <li><Link to='/addServices'>Add Service</Link></li>
+                                <li><Link to='/myreviews'>My Reviews</Link></li>
+                            </ul>
+                            <button className="btn" onClick={handleLogout}>LogOut</button>
+                        </div>
                         :
                         <Link to='/login' className="btn">LogIn</Link>
                 }

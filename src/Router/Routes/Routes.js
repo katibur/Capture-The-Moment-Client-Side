@@ -10,6 +10,7 @@ import PrivateRoute from "../PrivateRouter/PrivateRoute";
 import errorPhoto from '../../Assets/errorPhoto.png'
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import AddServices from "../../Pages/AddServices/AddServices";
+import PersonalReview from "../../Pages/PersonalReview/PersonalReview";
 
 const router = createBrowserRouter([
     {
@@ -29,12 +30,17 @@ const router = createBrowserRouter([
                 element: <Services></Services>
             },
             {
-                path: '/serviceDetails/:id',
-                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
+                path: '/services/:id',
+                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/addServices',
                 element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
+            },
+            {
+                path: '/myreviews',
+                element: <PrivateRoute><PersonalReview></PersonalReview></PrivateRoute>
             },
             {
                 path: '/login',
