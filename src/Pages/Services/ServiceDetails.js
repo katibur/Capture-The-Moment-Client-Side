@@ -8,8 +8,6 @@ import UserReview from '../Reviews/UserReview';
 import useTtile from '../../Components/Hooks/Title';
 import toast from 'react-hot-toast';
 
-
-
 const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
     const { _id, title, description, price, img, rating, facility } = useLoaderData();

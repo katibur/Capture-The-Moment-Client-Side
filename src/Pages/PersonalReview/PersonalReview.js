@@ -16,7 +16,6 @@ const PersonalReview = () => {
             })
     }, []);
 
-
     const handleDelete = (id) => {
         const agree = window.confirm('Are You Sure To Delete This Review?');
         if (agree) {
@@ -34,15 +33,6 @@ const PersonalReview = () => {
                 })
         }
     };
-
-
-
-
-
-
-
-
-
 
     const handleEdit = id => {
         fetch(`http://localhost:5000/reviews/${id}`, {
@@ -65,7 +55,6 @@ const PersonalReview = () => {
                 }
             })
     }
-
 
     return (
         <div>
