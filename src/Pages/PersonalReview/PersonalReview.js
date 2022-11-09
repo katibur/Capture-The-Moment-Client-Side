@@ -44,6 +44,27 @@ const PersonalReview = () => {
 
 
 
+    const handleEdit = id => {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ status: 'Updated' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = feedbacks.filter(odr => odr._id !== id);
+                    const approving = feedbacks.find(odr => odr._id === id);
+
+                    const newFeedback = [...remaining, approving]
+                    setFeedbacks(newFeedback);
+                    approving.status = 'Updated';
+                }
+            })
+    }
 
 
     return (
