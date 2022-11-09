@@ -18,7 +18,7 @@ const ServiceDetails = () => {
     const [userRev, setUserRev] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://capture-the-moment-server.vercel.app/reviews/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setUserRev(data);
@@ -26,7 +26,7 @@ const ServiceDetails = () => {
     }, [_id]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://capture-the-moment-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -49,7 +49,7 @@ const ServiceDetails = () => {
             time: new Date().toLocaleString()
         };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://capture-the-moment-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

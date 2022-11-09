@@ -20,7 +20,7 @@ const AddServices = () => {
             time: new Date().toLocaleString()
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://capture-the-moment-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

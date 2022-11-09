@@ -9,7 +9,7 @@ const PersonalReview = () => {
     const [feedbacks, setFeedbacks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://capture-the-moment-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => {
                 setFeedbacks(data);
@@ -19,7 +19,7 @@ const PersonalReview = () => {
     const handleDelete = (id) => {
         const agree = window.confirm('Are You Sure To Delete This Review?');
         if (agree) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://capture-the-moment-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const PersonalReview = () => {
     };
 
     const handleEdit = id => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://capture-the-moment-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
