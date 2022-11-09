@@ -61,7 +61,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success('Successfully Reviewed.')
+                    toast.success('Successfully Reviewed.Refresh Page To See.');
                     form.reset();
                 }
             })
