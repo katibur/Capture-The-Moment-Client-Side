@@ -65,8 +65,8 @@ const ServiceDetails = () => {
             <div className="card card-compact w-3/4 bg-base-100 shadow-xl my-6 mx-auto">
 
                 <PhotoProvider>
-                    <PhotoView src={img} >
-                        <img src={img} alt="" />
+                    <PhotoView src={img ? img : 'https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png'} >
+                        <img src={img ? img : 'https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png'} alt="" />
                     </PhotoView>
                 </PhotoProvider>
 
@@ -84,7 +84,7 @@ const ServiceDetails = () => {
 
                     <div className="card-actions justify-between text-center">
                         <p className='font-semibold text-2xl text-orange-600'>Price: {price ? price : 'TBA'}/BDT</p>
-                        <p className='font-semibold text-xl text-sky-600'>Rating: {rating ? rating : '5'}/5</p>
+                        <p className='font-semibold text-xl text-sky-600'>Rating: {rating ? rating : 5}/5</p>
                     </div>
                 </div>
             </div>

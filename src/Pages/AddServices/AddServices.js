@@ -7,15 +7,35 @@ const AddServices = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const price = form.price.value;
         const imageURL = form.imageURL.value;
         const description = form.description.value;
 
-        console.log(name, imageURL, description)
+        const service = {
+            title: name,
+            price: price,
+            img: imageURL,
+            description: description
+        }
+
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(service)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('Successfully added');
+                    form.reset();
+                }
+            })
     }
 
     return (
         <div>
-            <h1>service add</h1>
             <form onSubmit={handleAddService} className="card-body w-5/6 mx-auto">
 
                 <div className="form-control">
@@ -23,6 +43,12 @@ const AddServices = () => {
                         <span className="label-text">Service Name</span>
                     </label>
                     <input type="text" name='name' placeholder="Service Name" className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Service Price</span>
+                    </label>
+                    <input type="number" name='price' placeholder="Service Price" className="input input-bordered" />
                 </div>
 
                 <div className="form-control">

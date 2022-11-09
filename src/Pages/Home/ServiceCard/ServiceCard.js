@@ -12,8 +12,8 @@ const ServiceCard = ({ service }) => {
         <div className="card card-compact w-96 bg-base-100 shadow-xl my-6">
 
             <PhotoProvider>
-                <PhotoView src={img} >
-                    <img src={img} alt="" />
+                <PhotoView src={img ? img : 'https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png'} >
+                    <img src={img ? img : 'https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png'} alt="" />
                 </PhotoView>
             </PhotoProvider>
 
@@ -21,7 +21,7 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
 
                 <div>
-                    <p className='font-semibold text-xl text-sky-600'>Rating: {rating}/5</p>
+                    <p className='font-semibold text-xl text-sky-600'>Rating: {rating ? rating : 5}/5</p>
                 </div>
 
                 <div>
@@ -29,7 +29,7 @@ const ServiceCard = ({ service }) => {
                 </div>
 
                 <div className="card-actions justify-between">
-                    <p className='font-semibold text-2xl text-orange-600'>Price: {price}/BDT</p>
+                    <p className='font-semibold text-2xl text-orange-600'>Price: {price ? price : 'TBA'}/BDT</p>
                     <Link to={`/services/${_id}`}>
                         <button className="btn btn-circle btn-outline border-none text-orange-600">
                             <FaArrowRight></FaArrowRight>
