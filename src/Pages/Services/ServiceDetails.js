@@ -23,7 +23,7 @@ const ServiceDetails = () => {
             .then(data => {
                 setUserRev(data);
             })
-    }, [_id]);
+    }, [_id, userRev]);
 
     useEffect(() => {
         fetch('https://capture-the-moment-server.vercel.app/reviews')
@@ -59,7 +59,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success('Successfully Reviewed.Refresh Page To See.');
+                    toast.success('Successfully Reviewed.');
                     form.reset();
                     setUserRev((prevRev) => [userRev, ...prevRev]);
                 }
