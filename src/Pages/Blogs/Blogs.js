@@ -8,38 +8,23 @@ const Blogs = () => {
             <div className="card w-5/6 mx-auto my-5 border-2 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title mx-auto">What are the Differences between SQL and NoSQL?</h2>
-                    <div className="card-actions">
-                        <div className="overflow-x-auto">
-                            <table className="table table-zebra  w-full">
-                                <thead className='text-center'>
-                                    <tr>
-                                        <th>SQL</th>
-                                        <th>NoSQL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS).</td>
-                                        <td>Non-relational or distributed database system.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>These databases have fixed or static or predefined schema.</td>
-                                        <td>They have dynamic schema.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>These databases are best suited for complex queries.</td>
-                                        <td>These databases are not so good for complex queries.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vertically Scalable.</td>
-                                        <td>Horizontally scalable.</td>
-                                    </tr>
-                                    <tr>
-                                        <td><span className='font-bold'>Examples:</span> MySQL, PostgreSQL, Oracle, MS-SQL Server etc.</td>
-                                        <td><span className='font-bold'>Examples:</span> MongoDB, GraphQL, HBase, Neo4j, Cassandra etc.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div className="card-actions justify-between">
+                        <div>
+                            <h2 className="text-start font-bold mx-auto mt-4">SQL :</h2>
+                            <p>RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS).</p>
+                            <p>These databases have fixed or static or predefined schema.</p>
+                            <p>These databases are best suited for complex queries.</p>
+                            <p>Vertically Scalable.</p>
+                            <p><span className='font-bold'>Examples:</span> MySQL, PostgreSQL, Oracle, MS-SQL Server etc.</p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-start font-bold mx-auto mt-4">NoSQL :</h2>
+                            <p>Non-relational or distributed database system.</p>
+                            <p>They have dynamic schema.</p>
+                            <p>These databases are not so good for complex queries.</p>
+                            <p>Horizontally scalable.</p>
+                            <p><span className='font-bold'>Examples:</span> MongoDB, GraphQL, HBase, Neo4j, Cassandra etc.</p>
                         </div>
                     </div>
                 </div>
@@ -62,45 +47,29 @@ const Blogs = () => {
             <div className="card w-5/6 mx-auto my-5 border-2 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title mx-auto">What is the difference between javascript and NodeJS?</h2>
+                    <div className="card-actions justify-between">
+                        <div>
+                            <h2 className="text-start font-bold mx-auto mt-4">javascript :</h2>
+                            <p>It is an accessible, bridge, parsed, lightweight,
+                                reactive, and web apps programming language.</p>
+                            <p>It's a programming language, after all.
+                                Any browser with a competent browser engine will operate.</p>
+                            <p>It's most commonly used on client-side servers.</p>
+                            <p>It's made for creating network-centric apps.</p>
+                            <p>ypedJS, RamdaJS, and others are the example of JavaScript.</p>
+                        </div>
 
-                    <div className="card-actions">
-                        <div className="overflow-y-auto">
-                            <table className="table table-zebra  w-full">
-                                <thead className='text-center'>
-                                    <tr>
-                                        <th>javascript</th>
-                                        <th>NodeJS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>It is an accessible, bridge, parsed, lightweight, <br />
-                                            reactive, and web apps programming language.</td>
-                                        <td>It's a bridge, open-source Js <br />
-                                            runtime environment for executing Js on the server.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>It's a programming language, after all.<br />
-                                            Any browser with a competent browser engine will operate.</td>
-                                        <td>It's a JavaScript translator and environment<br />
-                                            that includes some valuable libraries for JavaScript programming.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>It's most commonly used on client-side servers.</td>
-                                        <td>It's mainly popular on the server-side.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>It's made for creating network-centric apps.</td>
-                                        <td>It's made for real-time data-intensive apps that<br />
-                                            run on multiple platforms.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TypedJS, RamdaJS, and others are the example of JavaScript.</td>
-                                        <td>Nodejs modules include Lodash and Express.<br />
-                                            All of these modules must be imported from npm</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div>
+                            <h2 className="text-start font-bold mx-auto mt-4">NodeJS :</h2>
+                            <p>It's a bridge, open-source Js
+                                runtime environment for executing Js on the server.</p>
+                            <p>It's a JavaScript translator and environment
+                                that includes some valuable libraries for JavaScript programming.</p>
+                            <p>It's mainly popular on the server-side.</p>
+                            <p>It's made for real-time data-intensive apps that
+                                run on multiple platforms.</p>
+                            <p>Nodejs modules include Lodash and Express.
+                                All of these modules must be imported from npm.</p>
                         </div>
                     </div>
                 </div>
