@@ -12,8 +12,8 @@ const BannerCarousel = ({ slide }) => {
             <div className='corousalImage mx-auto'>
                 <img src={image} alt="" className="w-full h-100 rounded-xl" />
             </div>
-            <div className="absolute flex justify-end transform -translate-y-1/2 left-44 top-1/2">
-                <h1 className='text-white font-bold text-6xl'>
+            <div className="absolute flex justify-end transform -translate-y-1/2 left-40 top-1/2">
+                <h1 className='text-white font-bold text-5xl'>
                     Capture <br />
                     The Best Moments<br />
                     Of Your Life

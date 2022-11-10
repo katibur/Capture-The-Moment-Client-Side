@@ -12,7 +12,7 @@ const Reviews = ({ feedback }) => {
                     <div className="overflow-x-auto w-full text-center">
                         <table className="table w-full my-2">
                             <tbody>
-                                <tr className='border-2'>
+                                <tr className='border-2 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                                     <td className='text-center w-1/3'>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">

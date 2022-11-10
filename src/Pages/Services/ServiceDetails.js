@@ -61,6 +61,7 @@ const ServiceDetails = () => {
                 if (data.acknowledged) {
                     toast.success('Successfully Reviewed.Refresh Page To See.');
                     form.reset();
+                    setUserRev((prevRev) => [userRev, ...prevRev]);
                 }
             })
     }
@@ -92,7 +93,7 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-3/4 mx-auto text-center'>
+            <div className='w-full mx-auto text-center grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-1'>
                 <h1 className='text-3xl font-bold mb-6'>Cutomer Reviews</h1>
                 {
                     reviews.map(feedback => <Reviews
@@ -106,7 +107,7 @@ const ServiceDetails = () => {
                         rev={rev}
                     ></UserReview>)
                 }
-                <div className='border-2 my-6 py-3 rounded-xl'>
+                <div className='border-2 my-6 py-3 rounded-xl mx-auto'>
                     <h1 className='text-3xl font-bold mb-6'>Your Review Matters.</h1>
                     <form className='my-6' onSubmit={handleReview}>
                         <input type="text" placeholder="Your Email" name='useremail' defaultValue={user?.email ? user.email : 'Unknown'} className="input input-bordered input-primary w-full max-w-xl input-lg text-center" />
