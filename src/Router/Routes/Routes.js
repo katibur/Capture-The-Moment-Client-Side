@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/:id',
-                element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+                element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => fetch(`https://capture-the-moment-server.vercel.app/services/${params.id}`)
             },
             {

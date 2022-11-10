@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import Reviews from '../Reviews/Reviews';
@@ -107,18 +107,22 @@ const ServiceDetails = () => {
                         rev={rev}
                     ></UserReview>)
                 }
-                <div className='border-2 my-6 py-3 rounded-xl mx-auto'>
+                <div className='border-2 my-6 py-3 px-3 rounded-xl mx-auto'>
                     <h1 className='text-3xl font-bold mb-6'>Your Review Matters.</h1>
-                    <form className='my-6' onSubmit={handleReview}>
-                        <input type="text" placeholder="Your Email" name='useremail' defaultValue={user?.email ? user.email : 'Unknown'} className="input input-bordered input-primary w-full max-w-xl input-lg text-center" />
+                    {
+                        user ? <form className='my-6' onSubmit={handleReview}>
+                            <input type="text" placeholder="Your Email" name='useremail' defaultValue={user?.email ? user.email : 'Unknown'} className="input input-bordered input-primary w-full max-w-xl input-lg text-center" />
 
-                        <input type="text" placeholder="Your Photo URL" name='userimg' className="input input-bordered input-primary w-full max-w-xl input-lg text-center" defaultValue={user?.photoURL ? user.photoURL : "https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png"} />
+                            <input type="text" placeholder="Your Photo URL" name='userimg' className="input input-bordered input-primary w-full max-w-xl input-lg text-center" defaultValue={user?.photoURL ? user.photoURL : "https://i.ibb.co/XbSzsDS/16451874451570033394image1-min.png"} />
 
-                        <input type="text" placeholder="Give Review Here" name='review' className="input input-bordered input-lg w-full max-w-xl text-center" />
-                        <div>
-                            <input type='submit' className="btn btn-outline btn-secondary mt-3" value='Post Review'></input>
-                        </div>
-                    </form>
+                            <input type="text" placeholder="Give Review Here" name='review' className="input input-bordered input-lg w-full max-w-xl text-center" />
+                            <div>
+                                <input type='submit' className="btn btn-outline btn-secondary mt-3" value='Post Review'></input>
+                            </div>
+                        </form>
+                            :
+                            <h1><Link to='/login'><button className='btn btn-outline btn-ghost'>Login</button></Link> To Add Review.</h1>
+                    }
                 </div>
             </div>
 

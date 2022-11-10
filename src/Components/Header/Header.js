@@ -19,6 +19,15 @@ const Header = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/services'>Services</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        {
+            user?.accessToken ?
+                <ul className="menu menu-horizontal p-0">
+                    <li><Link to='/addServices'>Add Service</Link></li>
+                    <li><Link to='/myreviews'>My Reviews</Link></li>
+                </ul>
+                :
+                ''
+        }
     </>
 
     return (
@@ -45,13 +54,7 @@ const Header = () => {
             <div className="navbar-end">
                 {
                     user?.accessToken ?
-                        <div>
-                            <ul className="menu menu-horizontal p-0">
-                                <li><Link to='/addServices'>Add Service</Link></li>
-                                <li><Link to='/myreviews'>My Reviews</Link></li>
-                            </ul>
-                            <button className="btn" onClick={handleLogout}>LogOut</button>
-                        </div>
+                        <button className="btn" onClick={handleLogout}>LogOut</button>
                         :
                         <Link to='/login' className="btn">LogIn</Link>
                 }
